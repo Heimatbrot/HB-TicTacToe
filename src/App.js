@@ -4,6 +4,7 @@ import './App.css';
 var turn = "X"
 const ways_win = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]]
 
+
 //function reset() {
 //  window.location.reload()
 //}
@@ -49,27 +50,47 @@ function checkwinner(){
   return false;
 }
 
+function checkmode(){
+  if (document.getElementById("tictactoeplayers").innerText === "TicTacToe one player") {
+    return
+  }
+  else {
+    return
+  }
+}
+
 function play(field) {
   if (field.innerText!=="X" && field.innerText!=="O"){
   if (turn === "X" ) {
     field.innerText = "X"
     checkwinner()
     turn = "O"
+    checkmode()
   } else {
     field.innerText = "O"
     checkwinner()
     turn = "X"
+    checkmode()
   }}
   else {
     console.log("not valid!")
   }
+}
+function changeplayer(){
+  if (document.getElementById("tictactoeplayers").innerText === "TicTacToe two players") {
+    document.getElementById("tictactoeplayers").innerText = "TicTacToe one player"
+  }
+  else {
+    document.getElementById("tictactoeplayers").innerText = "TicTacToe two players"
+  }
+  return
 }
 
 function App() {
   return (
     <div className="center">
       <div>
-      <h1>HB React</h1><h2>Tic Tac Toe</h2>
+      <h1>HB React</h1><h2 id="tictactoeplayers">TicTacToe two players</h2>
       <h2 id="winner">winner is</h2>
       <button className="gamegrid" id='but0' onClick={(event) => play(event.target)}></button>
       <button className="gamegrid" id='but1' onClick={(event) => play(event.target)}></button>
@@ -82,6 +103,7 @@ function App() {
       <button className="gamegrid" id='but8' onClick={(event) => play(event.target)}></button>
     </div>
     <div className='reset-container'>
+      <button id="playerselection" onClick={() => changeplayer()}>change mode</button>
       <button id="reset" onClick={() => window.location.reload(false)}>reset</button>
     </div>
     </div>

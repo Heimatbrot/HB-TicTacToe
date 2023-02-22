@@ -62,4 +62,24 @@ div{
     justify-content: center;
     margin-top: 5rem;
   }
+  .playersbutton {
+    display: flex;
+    justify-content: center;
+    margin-top: -3rem;
+  }
+  #playerselection {
+    display: block;
+    font-size: 25px;
+    height: 60px;
+    width: 25%;
+    color:rgb(165, 227, 188);
+    text-align: center;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+    background-color:rgb(98, 136, 112);
+    border-color: rgb(165, 227, 188);
+    border-style:solid;
+    border-radius: 5px;
+}
 
