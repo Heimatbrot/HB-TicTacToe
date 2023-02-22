@@ -4,10 +4,18 @@ import './App.css';
 var turn = "X"
 const ways_win = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]]
 
-
-//function reset() {
-//  window.location.reload()
-//}
+function reset() {
+  const buttons = document.querySelectorAll('.gamegrid');
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].innerText = "";
+    buttons[i].disabled = false;
+    buttons[i].style.color = "rgb(98, 136, 112)";
+  }
+  document.getElementById("winner").style.display = "none";
+  document.getElementById("reset").style.display = "none";
+  document.getElementById("playerselection").style.display = "none";
+  turn = "X";
+}
 
 function checkwinner(){
   const buttons = document.querySelectorAll('.gamegrid');
@@ -26,6 +34,7 @@ function checkwinner(){
       const gameGridElements = document.querySelectorAll(".gamegrid");
         for (let i = 0; i < gameGridElements.length; i++) {
         gameGridElements[i].disabled = true;
+        document.getElementById("playerselection").style.display ="block"
         document.getElementById("reset").style.display = "block"
         }
       }
@@ -50,14 +59,54 @@ function checkwinner(){
   return false;
 }
 
-function checkmode(){
-  if (document.getElementById("tictactoeplayers").innerText === "TicTacToe one player") {
-    return
+function checkmode() {
+  if (checkwinner()) {
+    return;
   }
-  else {
-    return
+  if (document.getElementById("tictactoeplayers").innerText === "TicTacToe one player") {
+    const buttons = document.querySelectorAll('.gamegrid');
+
+    // check if there's a move that would let the computer win
+    for (let i = 0; i < ways_win.length; i++) {
+      const [a, b, c] = ways_win[i];
+      if (buttons[a].innerText === "O" && buttons[b].innerText === "O" && buttons[c].innerText === "") {
+        play(buttons[c]);
+        return;
+      } else if (buttons[a].innerText === "O" && buttons[b].innerText === "" && buttons[c].innerText === "O") {
+        play(buttons[b]);
+        return;
+      } else if (buttons[a].innerText === "" && buttons[b].innerText === "O" && buttons[c].innerText === "O") {
+        play(buttons[a]);
+        return;
+      }
+    }
+    // check if there's a move that would let the player win
+    for (let i = 0; i < ways_win.length; i++) {
+      const [a, b, c] = ways_win[i];
+      if (buttons[a].innerText === "X" && buttons[b].innerText === "X" && buttons[c].innerText === "") {
+        play(buttons[c]);
+        return;
+      } else if (buttons[a].innerText === "X" && buttons[b].innerText === "" && buttons[c].innerText === "X") {
+        play(buttons[b]);
+        return;
+      } else if (buttons[a].innerText === "" && buttons[b].innerText === "X" && buttons[c].innerText === "X") {
+        play(buttons[a]);
+        return;
+      }
+    }
+
+    // if there's no winning move, play the next empty field
+    for (let i = 0; i < buttons.length; i++) {
+      if (buttons[i].innerText === "") {
+        play(buttons[i]);
+        break;
+      }
+    }
   }
 }
+
+
+
 
 function play(field) {
   if (field.innerText!=="X" && field.innerText!=="O"){
@@ -65,12 +114,10 @@ function play(field) {
     field.innerText = "X"
     checkwinner()
     turn = "O"
-    checkmode()
   } else {
     field.innerText = "O"
     checkwinner()
     turn = "X"
-    checkmode()
   }}
   else {
     console.log("not valid!")
@@ -86,25 +133,31 @@ function changeplayer(){
   return
 }
 
+function player(wert){
+  play(wert)
+  document.getElementById("playerselection").style.display ="none"
+  checkmode()
+}
+
 function App() {
   return (
     <div className="center">
       <div>
       <h1>HB React</h1><h2 id="tictactoeplayers">TicTacToe two players</h2>
       <h2 id="winner">winner is</h2>
-      <button className="gamegrid" id='but0' onClick={(event) => play(event.target)}></button>
-      <button className="gamegrid" id='but1' onClick={(event) => play(event.target)}></button>
-      <button className="gamegrid" id='but2' onClick={(event) => play(event.target)}></button><br></br>
-      <button className="gamegrid" id='but3' onClick={(event) => play(event.target)}></button>
-      <button className="gamegrid" id='but4' onClick={(event) => play(event.target)}></button>
-      <button className="gamegrid" id='but5' onClick={(event) => play(event.target)}></button><br></br>
-      <button className="gamegrid" id='but6' onClick={(event) => play(event.target)}></button>
-      <button className="gamegrid" id='but7' onClick={(event) => play(event.target)}></button>
-      <button className="gamegrid" id='but8' onClick={(event) => play(event.target)}></button>
+      <button className="gamegrid" id='but0' onClick={(event) => player(event.target)}></button>
+      <button className="gamegrid" id='but1' onClick={(event) => player(event.target)}></button>
+      <button className="gamegrid" id='but2' onClick={(event) => player(event.target)}></button><br></br>
+      <button className="gamegrid" id='but3' onClick={(event) => player(event.target)}></button>
+      <button className="gamegrid" id='but4' onClick={(event) => player(event.target)}></button>
+      <button className="gamegrid" id='but5' onClick={(event) => player(event.target)}></button><br></br>
+      <button className="gamegrid" id='but6' onClick={(event) => player(event.target)}></button>
+      <button className="gamegrid" id='but7' onClick={(event) => player(event.target)}></button>
+      <button className="gamegrid" id='but8' onClick={(event) => player(event.target)}></button>
     </div>
     <div className='reset-container'>
       <button id="playerselection" onClick={() => changeplayer()}>change mode</button>
-      <button id="reset" onClick={() => window.location.reload(false)}>reset</button>
+      <button id="reset" onClick={() => reset()}>reset</button>
     </div>
     </div>
   )
