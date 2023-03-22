@@ -8,8 +8,7 @@ You can try the game live at: https://heimatbrot.github.io/HB-TicTacToe
 To get a local copy up and running, follow these steps:
 
 ## Clone the repository to your local machine:
-
-## Copy code
+Copy code
 ```
 git clone https://github.com/heimatbrot/HB-TicTacToe.git
 ```
