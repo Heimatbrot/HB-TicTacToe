@@ -7,23 +7,27 @@ You can try the game live at: https://heimatbrot.github.io/HB-TicTacToe
 ## Getting Started
 To get a local copy up and running, follow these steps:
 
-## Clone the repository to your local machine:
+### Clone the repository to your local machine:
 Copy code
 ```
 git clone https://github.com/heimatbrot/HB-TicTacToe.git
 ```
-## Install the dependencies:
+### Install the dependencies:
 Copy code
 ```
 npm install
 ```
-## Start the development server:
+### Start the development server:
 Copy code
 ```
 npm start
 ```
-## Deployment
-To deploy the app to GitHub Pages, run:
+### Deployment
+#### Install GitHub Pages:
+```
+npm install gh-pages --save-dev
+```
+### Then to deploy the app to GitHub Pages, run:
 ```
 npm run deploy
 ```
