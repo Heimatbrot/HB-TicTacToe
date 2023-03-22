@@ -27,7 +27,7 @@ npm start
 ```
 npm install gh-pages --save-dev
 ```
-### Then to deploy the app to GitHub Pages, run:
+#### Then to deploy the app to GitHub Pages, run:
 ```
 npm run deploy
 ```
