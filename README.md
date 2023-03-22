@@ -2,7 +2,7 @@ Tic Tac Toe PWA
 This is a simple Tic Tac Toe Progressive Web App (PWA) built with React. It was created as my first React programming experience and to test GitHub Pages.
 
 Demo
-You can try the game live at: https://yourusername.github.io/tic-tac-toe-pwa
+You can try the game live at: https://heimatbrot.github.io/HB-TicTacToe
 
 Getting Started
 To get a local copy up and running, follow these steps:
