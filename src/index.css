@@ -4,6 +4,7 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
     touch-action: manipulation; /* prevent pinch-to-zoom on touch devices */
+    overflow: hidden; /* stop scrolling */
 }
 
 
