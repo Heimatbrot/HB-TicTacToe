@@ -3,26 +3,26 @@
     height: 25% !important;
     font-size: 36px;
     vertical-align: top;
-    color:rgb(98, 136, 112);
+    color:rgb(136, 126, 98);
     text-align: center;
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
-    background-color:rgb(165, 227, 188);
-    border-color: rgb(98, 136, 112);
+    background-color:rgb(227, 211, 165);
+    border-color: rgb(136, 126, 98);
     border-style:solid;
     border-radius: 15px;
 }
 
 body{
-    background-color: rgb(98, 136, 112);
+    background-color: rgb(136, 126, 98);
 }
 
 h1 {
-    color: rgb(165, 227, 188);
+    color: rgb(227, 211, 165);
 }
 h2 {
-    color: rgb(165, 227, 188);
+    color: rgb(227, 211, 165);
 }
 
 div{
@@ -43,18 +43,19 @@ div{
 
 #reset {
     display: none;
-    font-size: 25px;
+    font-size: 18px;
     height: 60px;
     width: 25%;
-    color:rgb(165, 227, 188);
+    color:rgb(136, 126, 98);
     text-align: center;
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
-    background-color:rgb(98, 136, 112);
-    border-color: rgb(165, 227, 188);
+    background-color:rgb(227, 211, 165);
+    border-width: 3px;
+    border-color: rgb(136, 126, 98);
     border-style:solid;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .reset-container {
@@ -69,17 +70,17 @@ div{
   }
   #playerselection {
     display: block;
-    font-size: 25px;
+    font-size: 18px;
     height: 60px;
     width: 25%;
-    color:rgb(165, 227, 188);
+    color:rgb(136, 126, 98);
     text-align: center;
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
-    background-color:rgb(98, 136, 112);
-    border-color: rgb(165, 227, 188);
+    background-color:rgb(227, 211, 165);
+    border-color: rgb(136, 126, 98);
+    border-width: 3px;
     border-style:solid;
-    border-radius: 5px;
+    border-radius: 10px;
 }
-

@@ -52,6 +52,7 @@ function checkwinner(){
         for (let i = 0; i < gameGridElements.length; i++) {
         gameGridElements[i].disabled = true;
         document.getElementById("reset").style.display = "block"
+        document.getElementById("playerselection").style.display ="block"
         }
       return true;
     }
@@ -143,7 +144,7 @@ function App() {
   return (
     <div className="center">
       <div>
-      <h1>HB React</h1><h2 id="tictactoeplayers">TicTacToe two players</h2>
+      <h1>HB-TicTacToe</h1><h2 id="tictactoeplayers">TicTacToe two players</h2>
       <h2 id="winner">winner is</h2>
       <button className="gamegrid" id='but0' onClick={(event) => player(event.target)}></button>
       <button className="gamegrid" id='but1' onClick={(event) => player(event.target)}></button>
@@ -156,8 +157,13 @@ function App() {
       <button className="gamegrid" id='but8' onClick={(event) => player(event.target)}></button>
     </div>
     <div className='reset-container'>
+
       <button id="playerselection" onClick={() => changeplayer()}>change mode</button>
+
+
       <button id="reset" onClick={() => reset()}>reset</button>
+
+      
     </div>
     </div>
   )
