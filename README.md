@@ -1,7 +1,7 @@
 # HB-TicTacToe
 This is a simple Tic Tac Toe Progressive Web App (PWA) built with React. It was created as my first React programming experience and to test GitHub Pages.
 
-# #Demo
+## Demo
 You can try the game live at: https://heimatbrot.github.io/HB-TicTacToe
 
 ## Getting Started
@@ -41,3 +41,4 @@ This project is licensed under the GNU GLPv3 License - see the LICENSE file for 
 ## Acknowledgments
 Thanks to create-react-app for providing a solid foundation for this project.
 Thanks to the React community for all the helpful resources and tutorials!
+Thanks to ChatGPT to help me out if i was stuck.
