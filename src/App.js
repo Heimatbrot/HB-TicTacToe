@@ -9,7 +9,7 @@ function reset() {
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].innerText = "";
     buttons[i].disabled = false;
-    buttons[i].style.color = "rgb(98, 136, 112)";
+    buttons[i].style.color = "rgb(136, 126, 98)";
   }
   document.getElementById("winner").style.display = "none";
   document.getElementById("reset").style.display = "none";
