@@ -13,6 +13,9 @@
     border-style:solid;
     border-radius: 15px;
 }
+.gamegrid:active{
+    outline: none;
+}
 
 body{
     background-color: rgb(136, 126, 98);

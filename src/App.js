@@ -111,6 +111,7 @@ function checkmode() {
 
 function play(field) {
   if (field.innerText!=="X" && field.innerText!=="O"){
+    field.disabled = true
   if (turn === "X" ) {
     field.innerText = "X"
     checkwinner()
